@@ -35,6 +35,7 @@ class _HomepageState extends State<Homepage> {
           ),
           body: Row(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -53,10 +54,21 @@ class _HomepageState extends State<Homepage> {
                     ),
                 ],
               ),
+              Padding(
+                padding: GlobalThemeData.globalPadding,
+                child: Divider(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  thickness: 3,
+                  height: 100,
+                ),
+              ),
 
               // Display the selected route
               Expanded(
-                child: _routesWidgetMap[_selectedRoute]!,
+                child: Padding(
+                  padding: GlobalThemeData.globalPadding,
+                  child: _routesWidgetMap[_selectedRoute]!,
+                ),
               ),
             ],
           ),

@@ -43,4 +43,8 @@ class GlobalThemeData {
     onSurface: Colors.white,
     brightness: Brightness.dark,
   );
+
+  static BorderRadius borderRadius = BorderRadius.circular(8);
+  static const EdgeInsets globalPadding = EdgeInsets.all(4.0);
+  static const EdgeInsets globalMargin = EdgeInsets.all(8.0);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hr_army/themes.dart';
 
 class NavigationButton extends StatefulWidget {
   const NavigationButton({
@@ -29,10 +30,10 @@ class _NavigationButtonState extends State<NavigationButton> {
       child: GestureDetector(
         onTap: widget.onPressed,
         child: Container(
-          margin: const EdgeInsets.all(8),
-          padding: const EdgeInsets.all(4),
+          margin: GlobalThemeData.globalMargin,
+          padding: GlobalThemeData.globalPadding,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: GlobalThemeData.borderRadius,
             color: _isHovering
                 ? widget.backgroundColor.withOpacity(0.8)
                 : widget.backgroundColor,
