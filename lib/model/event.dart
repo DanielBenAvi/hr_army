@@ -3,11 +3,14 @@ import 'package:hr_army/model/user.dart';
 class Event {
   final String name;
   final String description;
-  final String startDate;
-  final String endDate;
+  final DateTime startDate;
+  final DateTime endDate;
   final List<UserEvent> participants = [];
+  late String id;
 
-  Event(this.name, this.description, this.startDate, this.endDate);
+  Event(this.name, this.description, this.startDate, this.endDate) {
+    id = DateTime.now().millisecondsSinceEpoch.toString();
+  }
 
   void addParticipant(User user, String startDate) {
     participants.add(UserEvent(user, startDate));

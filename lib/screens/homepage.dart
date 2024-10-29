@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hr_army/components/nav_button.dart';
 import 'package:hr_army/model/model.dart';
 import 'package:hr_army/screens/pages/add_user.dart';
+import 'package:hr_army/screens/pages/create_event.dart';
 import 'package:hr_army/screens/pages/dashboard.dart';
 import 'package:hr_army/screens/pages/events.dart';
 import 'package:hr_army/screens/pages/users.dart';
@@ -89,6 +90,7 @@ class _HomepageState extends State<Homepage> {
       "Users": const Users(),
       "Add User": AddUser(navigateTo: _navigateTo),
       "Events": const Events(),
+      "Create Event": CreateEvent(navigateTo: _navigateTo),
     };
   }
 }

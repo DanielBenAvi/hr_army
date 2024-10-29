@@ -10,8 +10,12 @@ class User {
   final String _class; // כיתה
   final String _role; // תפקיד
 
+  late int createdAt;
+
   User(this._id, this._firstName, this._lastName, this._email, this._phone,
-      this._battalion, this._company, this._platoon, this._class, this._role);
+      this._battalion, this._company, this._platoon, this._class, this._role) {
+    createdAt = DateTime.now().millisecondsSinceEpoch;
+  }
 
   @override
   String toString() {
@@ -34,6 +38,7 @@ class UserEvent {
   final String _id;
   final User _user;
   final String _startDate;
+  
 
   UserEvent(this._user, this._startDate) : _id = _user._id;
 
@@ -41,4 +46,8 @@ class UserEvent {
   String toString() {
     return "UserEvent: {id: $_id, user: $_user, startDate: $_startDate}";
   }
+
+  String get ID => _id;
+  User get user => _user;
+  String get startDate => _startDate;
 }
