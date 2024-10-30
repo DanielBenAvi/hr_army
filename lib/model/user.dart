@@ -38,7 +38,6 @@ class UserEvent {
   final String _id;
   final User _user;
   final String _startDate;
-  
 
   UserEvent(this._user, this._startDate) : _id = _user._id;
 
@@ -47,7 +46,7 @@ class UserEvent {
     return "UserEvent: {id: $_id, user: $_user, startDate: $_startDate}";
   }
 
-  String get ID => _id;
+  String get id => _id;
   User get user => _user;
   String get startDate => _startDate;
 }

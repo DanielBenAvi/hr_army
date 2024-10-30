@@ -35,7 +35,7 @@ class EventData extends StatelessWidget {
                 rows: event.participants.map((e) {
                   return DataRow(
                     cells: [
-                      DataCell(Text(e.ID)),
+                      DataCell(Text(e.id)),
                       DataCell(Text(e.user.firstName)),
                       DataCell(Text(e.user.lastName)),
                     ],

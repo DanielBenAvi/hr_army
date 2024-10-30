@@ -27,26 +27,30 @@ class _EventsState extends State<Events> {
               children: [
                 const Text('Choose Event'),
                 const SizedBox(width: 10),
-                DropdownButton(
-                  value: eventIndex,
-                  items: value.events.map((e) {
-                    return DropdownMenuItem(
-                      value: value.events.indexOf(e),
-                      child: Text(e.name),
-                    );
-                  }).toList(),
-                  onChanged: (int? value) {
-                    if (value != null) {
-                      eventIndex = value;
-                    }
-                  },
-                ),
+                value.events.isEmpty
+                    ? DropdownButton(
+                        value: eventIndex,
+                        items: value.events.map((e) {
+                          return DropdownMenuItem(
+                            value: value.events.indexOf(e),
+                            child: Text(e.name),
+                          );
+                        }).toList(),
+                        onChanged: (int? value) {
+                          if (value != null) {
+                            eventIndex = value;
+                          }
+                        },
+                      )
+                    : const Text('No events available'),
               ],
             ),
           ),
 
           // This is the EventData widget
-          EventData(eventIndex: eventIndex),
+          value.events.isEmpty
+              ? const Text('No events available')
+              : EventData(eventIndex: eventIndex),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hr_army/components/nav_button.dart';
+import 'package:hr_army/components/nav_title.dart';
 import 'package:hr_army/model/model.dart';
 import 'package:hr_army/screens/pages/add_user.dart';
 import 'package:hr_army/screens/pages/create_event.dart';
@@ -40,28 +41,52 @@ class _HomepageState extends State<Homepage> {
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (var route in _routesWidgetMap.keys)
-                    NavigationButton(
-                      routeName: route,
-                      onPressed: () => _navigateTo(route),
-                      backgroundColor: _selectedRoute == route
-                          ? Theme.of(context).colorScheme.primary
-                          : Theme.of(context).colorScheme.secondary,
-                      textColor: _selectedRoute == route
-                          ? Theme.of(context).colorScheme.onPrimary
-                          : Theme.of(context).colorScheme.onSecondary,
-                    ),
+                  NavigationButton(
+                    routeName: "Dashboard",
+                    onPressed: () =>
+                        _navigateTo('Dashboard'), // Navigate to Dashboard
+                    backgroundColor:
+                        getSelctedColor(context, 'Dashboard', _selectedRoute),
+                    textColor: getSelctedTextColor(
+                        context, 'Dashboard', _selectedRoute),
+                  ),
+                  const NavigationTitle(title: 'Users'),
+                  NavigationButton(
+                    routeName: "Users",
+                    onPressed: () => _navigateTo('Users'),
+                    backgroundColor:
+                        getSelctedColor(context, 'Users', _selectedRoute),
+                    textColor:
+                        getSelctedTextColor(context, 'Users', _selectedRoute),
+                  ),
+                  NavigationButton(
+                    routeName: "Add User",
+                    onPressed: () => _navigateTo('Add User'),
+                    backgroundColor:
+                        getSelctedColor(context, 'Add User', _selectedRoute),
+                    textColor: getSelctedTextColor(
+                        context, 'Add User', _selectedRoute),
+                  ),
+                  const NavigationTitle(title: 'Events'),
+                  NavigationButton(
+                    routeName: "Events",
+                    onPressed: () => _navigateTo('Events'),
+                    backgroundColor:
+                        getSelctedColor(context, 'Events', _selectedRoute),
+                    textColor:
+                        getSelctedTextColor(context, 'Events', _selectedRoute),
+                  ),
+                  NavigationButton(
+                    routeName: "Create Event",
+                    onPressed: () => _navigateTo('Create Event'),
+                    backgroundColor: getSelctedColor(
+                        context, 'Create Event', _selectedRoute),
+                    textColor: getSelctedTextColor(
+                        context, 'Create Event', _selectedRoute),
+                  ),
                 ],
-              ),
-              Padding(
-                padding: GlobalThemeData.globalPadding,
-                child: Divider(
-                  color: Theme.of(context).colorScheme.onSurface,
-                  thickness: 3,
-                  height: 100,
-                ),
               ),
 
               // Display the selected route

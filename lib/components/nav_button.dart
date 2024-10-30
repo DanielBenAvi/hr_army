@@ -58,3 +58,17 @@ class _NavigationButtonState extends State<NavigationButton> {
     );
   }
 }
+
+Color getSelctedColor(
+    BuildContext context, String routeName, String selectedRoute) {
+  return selectedRoute == routeName
+      ? Theme.of(context).colorScheme.primary
+      : Theme.of(context).colorScheme.secondary;
+}
+
+Color getSelctedTextColor(
+    BuildContext context, String routeName, String selectedRoute) {
+  return selectedRoute == routeName
+      ? Theme.of(context).colorScheme.onPrimary
+      : Theme.of(context).colorScheme.onSecondary;
+}

@@ -46,5 +46,9 @@ class GlobalThemeData {
 
   static BorderRadius borderRadius = BorderRadius.circular(8);
   static const EdgeInsets globalPadding = EdgeInsets.all(4.0);
+  static const EdgeInsets globalHorizontalPadding =
+      EdgeInsets.symmetric(horizontal: 8.0);
+  static const EdgeInsets globalVerticalPadding =
+      EdgeInsets.symmetric(vertical: 8.0);
   static const EdgeInsets globalMargin = EdgeInsets.all(8.0);
 }
