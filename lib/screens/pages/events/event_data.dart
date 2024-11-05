@@ -76,6 +76,7 @@ class _EventDataState extends State<EventData> {
                             TextButton(
                               child: const Text('Add'),
                               onPressed: () {
+                                // todo - fix this
                                 for (var user in selectedUsers.keys) {
                                   if (selectedUsers[user]!) {
                                     value.events[widget.eventIndex]
